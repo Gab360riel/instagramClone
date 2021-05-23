@@ -8,13 +8,13 @@ require("firebase/firestore");
 require("firebase/firebase-storage");
 
 export default function Save(props) {
-    console.log(props.route.params.image);
+    // console.log(props.route.params.image);
     const [caption, setCaption] = useState("");
 
     const uploadImage = async () => {
         const uri = props.route.params.image;
         const childPath = `post/${firebase.auth().currentUser.uid}/${Math.random().toString(36)}`;
-        console.log(childPath);
+        // console.log(childPath);
 
         const response = await fetch(uri);
         const blob = await response.blob();
@@ -32,12 +32,12 @@ export default function Save(props) {
         const taskCompleted = () => {
             task.snapshot.ref.getDownloadURL().then((snapshot) => {
                 savePostData(snapshot);
-                console.log(snapshot)
+                // console.log(snapshot)
             })
         }
 
         const taskError = snapshot => {
-            console.log(snapshot);
+            // console.log(snapshot);
         }
 
         task.on("state_changed", taskProgress, taskError, taskCompleted);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, FlatList, TouchableOpacity, Keyboard} from 'react-native';
 
 import firebase from 'firebase';
 require('firebase/firestore');
@@ -22,8 +22,8 @@ export default function Search(props) {
         })
     }
         return (
-            <View>
-                <TextInput  placeholder="Type Here!" onChangeText={(search) => fetchUsers(search)}/>
+            <View style={{marginTop: 15, marginLeft: 15}}>
+                <TextInput placeholder="Type Here!" onChangeText={(search) => fetchUsers(search)}/>
 
                 <FlatList 
                     numColumns={1}

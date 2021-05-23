@@ -26,7 +26,7 @@ export class Register extends Component {
                  name,
                  email
              })
-             console.log(result);
+            //  console.log(result);
          })
          .then((error) => {
             console.log(error);
