@@ -49,7 +49,7 @@ function Feed(props) {
 }
 
 const win = Dimensions.get('window');
-const ratio = win.width/885; //541 is actual image width
+const ratio = win.width/885; //885 is actual image width
 
 
 const styles = StyleSheet.create({
